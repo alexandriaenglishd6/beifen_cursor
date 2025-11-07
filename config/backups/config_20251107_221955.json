@@ -1,0 +1,221 @@
+{
+  "ui": {
+    "theme": "blue",
+    "lang": "zh-CN",
+    "geometry": "1100x720"
+  },
+  "run": {
+    "output_root": "out",
+    "download_langs": [
+      "zh",
+      "en"
+    ],
+    "max_workers": 16
+  },
+  "retry": {
+    "enabled": true,
+    "max_attempts": 2,
+    "backoff": {
+      "base_seconds": 5,
+      "factor": 2.0,
+      "jitter": true
+    },
+    "only_retryable": true,
+    "filters": {
+      "error_class": [
+        "network",
+        "rate_limit"
+      ],
+      "error_code": [],
+      "langs": []
+    }
+  },
+  "subscriptions": [
+    {
+      "id": "5a6cd4b1",
+      "name": "aaaaaa",
+      "url": "aaaaaa",
+      "enabled": false,
+      "check_interval": "hourly",
+      "download_langs": [
+        "zh",
+        "en"
+      ],
+      "last_check": null,
+      "created_at": "2025-11-07 16:35:34"
+    }
+  ],
+  "scheduler": {
+    "enabled": true,
+    "tz": "local",
+    "max_concurrent": 2,
+    "default_interval_minutes": 120,
+    "jobs": []
+  },
+  "smart": {
+    "enabled": true,
+    "asr_threshold": 0.5,
+    "low_hit_threshold": 0.45,
+    "lang_warn_threshold": 0.3
+  },
+  "postprocess": {
+    "enabled": true,
+    "merge_short_lines": true,
+    "dedupe_near_duplicates": true,
+    "strip_nonspeech": false,
+    "fix_overlapping_timestamps": true,
+    "normalize_whitespace": true,
+    "short_line_len": 12
+  },
+  "quality": {
+    "enabled": true,
+    "warn_threshold": 60,
+    "auto_retry_with_asr": false
+  },
+  "translate": {
+    "enabled": true,
+    "src": "en",
+    "tgt": "zh",
+    "format": "srt",
+    "provider": "google",
+    "postprocess": true
+  },
+  "asr": {
+    "enabled": true,
+    "provider": "mock",
+    "lang_hint": "auto",
+    "timeout": 120,
+    "max_duration_min": 60
+  },
+  "bilingual": {
+    "enabled": true,
+    "format": "tsv",
+    "primary": "auto",
+    "secondary": "en",
+    "output_dir": "bilingual"
+  },
+  "_comment": "YouTube 字幕下载工具 v4.0 配置示例",
+  "_version": "4.0.0-stable",
+  "output_root": "out",
+  "max_workers": 5,
+  "sleep_between": 0.5,
+  "retry_times": 2,
+  "download": {
+    "enabled": true,
+    "langs": [
+      "zh",
+      "en"
+    ],
+    "prefer": "both",
+    "format": "txt",
+    "merge_bilingual": true,
+    "incremental": true,
+    "output_root": "out",
+    "download_langs": [
+      "en"
+    ],
+    "download_fmt": "srt",
+    "max_workers": 5,
+    "incremental_detect": true,
+    "incremental_download": true,
+    "force_refresh": false,
+    "early_stop_on_seen": true
+  },
+  "detection": {
+    "mode": "standard",
+    "adaptive_concurrency": true,
+    "min_workers": 2,
+    "max_workers_cap": 20,
+    "early_stop_on_seen": true
+  },
+  "proxy": {
+    "enabled": false,
+    "mode": "round_robin",
+    "cool_down_sec": 300,
+    "max_fails": 2,
+    "blacklist_threshold": 0.15,
+    "window": 30,
+    "blacklist_recovery_sec": 600,
+    "proxies": [
+      "http://proxy1.example.com:8080",
+      "http://proxy2.example.com:8080"
+    ]
+  },
+  "rate_limit": {
+    "req_rate": 4.0,
+    "ytdlp_rate": 3.0,
+    "yta_rate": 5.0
+  },
+  "circuit_breaker": {
+    "threshold": 8,
+    "cooldown_sec": 120.0
+  },
+  "ai": {
+    "enabled": false,
+    "provider": "Perplexity",
+    "model": "sonar-pro",
+    "api_key": "2156464565295989159",
+    "base_url": "https://api.openai.com/v1",
+    "translate_enabled": false,
+    "translate_langs": [
+      "zh",
+      "en"
+    ],
+    "bilingual_enabled": true
+  },
+  "webhook": {
+    "enabled": false,
+    "url": "https://your-webhook-endpoint.com/notify",
+    "timeout_sec": 5,
+    "max_retry": 3,
+    "secret": "env:WEBHOOK_SECRET",
+    "events": [
+      "run_start",
+      "detect_done",
+      "download_done",
+      "ai_done",
+      "ai_guard_stop",
+      "run_end"
+    ]
+  },
+  "subscription": {
+    "enabled": true,
+    "auto_update": false,
+    "update_interval_hours": 24,
+    "max_items_per_source": 0
+  },
+  "queue": {
+    "enabled": true,
+    "max_parallel": 2,
+    "retry_on_failure": true,
+    "fair_scheduling_delay_ms": [
+      100,
+      300
+    ]
+  },
+  "export": {
+    "auto_export_csv": true,
+    "auto_export_excel": false,
+    "excel_days": 7
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "gpt_tool.log",
+    "max_size_mb": 10,
+    "backup_count": 3,
+    "max_entries": 10000
+  },
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "cookiefile": "",
+  "network": {
+    "proxy_text": "",
+    "cookiefile": "C:/Users/21027/Desktop/gpt_tool/beifen_cursor/config/www.youtube.com_cookies.txt",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/542.38",
+    "timeout": 30,
+    "retry_times": 3,
+    "verify_ssl": true,
+    "follow_redirects": true,
+    "debug": true,
+    "save_history": true
+  }
+}

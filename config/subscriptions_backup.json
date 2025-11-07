@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "442f986e",
+      "kind": "channel",
+      "url": "https://www.youtube.com/@gaojilingjuli",
+      "title": "",
+      "active": true,
+      "tags": [],
+      "added_at": "2025-10-26T13:33:05Z",
+      "last_seen": null,
+      "notes": ""
+    },
+    {
+      "id": "2f2a701b",
+      "kind": "channel",
+      "url": "https://www.youtube.com/@test1",
+      "title": "测试频道1",
+      "active": true,
+      "tags": [
+        "tech",
+        "test"
+      ],
+      "added_at": "2025-10-26T14:56:26Z",
+      "last_seen": null,
+      "notes": ""
+    },
+    {
+      "id": "38f49760",
+      "kind": "channel",
+      "url": "https://www.youtube.com/@test2",
+      "title": "测试频道2",
+      "active": true,
+      "tags": [
+        "daily"
+      ],
+      "added_at": "2025-10-26T14:56:26Z",
+      "last_seen": null,
+      "notes": ""
+    }
+  ]
+}

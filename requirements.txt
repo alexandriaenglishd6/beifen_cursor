@@ -1,0 +1,25 @@
+# YouTube Subtitle Tool v4.0.0-stable
+# 核心依赖
+
+# 字幕下载
+yt-dlp>=2023.10.13
+youtube-transcript-api>=0.6.0
+
+# HTTP 请求（AI 调用）
+requests>=2.31.0
+
+# Excel 导出（可选）
+openpyxl>=3.1.0
+
+# PDF 导出（可选）
+reportlab>=4.0.0
+
+# 图表生成（报告）
+plotly>=5.17.0
+
+# 开发依赖（可选）
+# pytest>=7.4.0
+# black>=23.10.0
+# ruff>=0.1.0
+# mypy>=1.6.0
+

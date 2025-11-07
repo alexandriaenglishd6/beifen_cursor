@@ -1,0 +1,22 @@
+{
+  "ui_theme": "light",
+  "ui_lang": "zh-CN",
+  "output_root": "out",
+  "max_workers": 16,
+  "download_langs": [
+    "zh",
+    "en"
+  ],
+  "ai_config": {
+    "ai_enabled": true,
+    "ai_provider": "Perplexity",
+    "ai_model": "sonar-pro",
+    "ai_api_key": "2156464565295989159",
+    "ai_base_url": "https://api.openai.com/v1",
+    "translate_enabled": false,
+    "translate_langs": [
+      "zh"
+    ],
+    "bilingual_enabled": true
+  }
+}
