@@ -9,6 +9,9 @@ jobs:
   offline:
     name: Offline Suite (Windows)
     runs-on: windows-latest
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,9 +35,20 @@ jobs:
           python -m pip install --upgrade pip
           if (Test-Path 'requirements.txt') { pip install -r requirements.txt } else { echo 'no requirements.txt, skip' }
 
+      - name: Show environment
+        shell: pwsh
+        run: |
+          python -V
+          pip list
+          echo "Repo root: $pwd"
+          echo "Tree (top 2 levels):"
+          Get-ChildItem -Recurse -Depth 2 | ForEach-Object { $_.FullName }
+
       - name: Run offline regression
         shell: pwsh
         run: |
+          $env:PYTHONUTF8="1"
+          $env:PYTHONIOENCODING="utf-8"
           python tests/run_regression.py --suite offline
 
       - name: Upload out artifacts (if any)
