@@ -14,6 +14,15 @@ import subprocess
 from pathlib import Path
 import argparse
 
+# 统一 Windows Runner 的控制台编码，避免 cp1252 导致中文输出失败
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 ROOT = Path(__file__).parent.parent
 PY = sys.executable or "python"
 
